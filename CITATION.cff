@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+
+message: "If you use this project in academic work, please cite it."
+
+title: "GreenHawk AI: AI-Powered Black and White Image Colorization Platform"
+
+authors:
+  - family-names: "GreenHawk"
+    given-names: "Ali"
+
+version: "1.0.0"
+
+date-released: "2026-07-21"
+
+repository-code:
+  "https://github.com/Greenhawk5/GreenHawk-AI"
+
+keywords:
+  - Computer Vision
+  - Deep Learning
+  - Image Colorization
+  - Artificial Intelligence
+  - FastAPI

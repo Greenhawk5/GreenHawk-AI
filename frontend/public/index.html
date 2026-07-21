@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GreenHawk AI — Colorize Historical Images with Advanced AI 🐉</title>
+<meta name="description" content="GreenHawk AI Colorization restores grayscale photographs into vivid color using Zhang, DeOldify, and FLUX — a professional computer-vision studio in the browser." />
+<meta property="og:title" content="GreenHawk AI — Colorize Historical Images" />
+<meta property="og:description" content="Bring grayscale photos back to life with three advanced AI colorization models in one professional studio." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="./index.html" />
+<meta property="og:image" content="assets/logo/greenhawk.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="./favicon.png" />
+<link rel="canonical" href="./index.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/themes.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"GreenHawk AI Colorization","applicationCategory":"MultimediaApplication","description":"AI-powered image colorization studio using Zhang, DeOldify, and FLUX models."}
+</script>
+</head>
+<body>
+
+<header class="nav" role="banner">
+  <div class="container nav-inner">
+    <a class="brand" href="./index.html">
+      <img src="assets/logo/greenhawk.png" alt="GreenHawk logo" />
+      <span class="brand-name">GreenHawk<span> AI</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a data-nav-link href="./index.html" data-i18n="nav.home">Home</a>
+      <a data-nav-link href="./models.html" data-i18n="nav.models">AI Models</a>
+      <a data-nav-link href="./about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="nav-right">
+      <button class="lang-btn" data-lang-toggle aria-label="Toggle language"><span class="lang-flag"><img src="assets/flags/iran.svg" alt="Iran flag" width="20" height="14"></span><span class="lang-code">FA</span></button>
+      <button class="btn-icon" data-theme-toggle aria-label="Toggle theme" aria-pressed="true">
+        <svg data-icon="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg data-icon="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="btn-icon hamburger" data-hamburger aria-label="Menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<button class="scroll-to-top" data-scroll-top aria-label="Scroll to top" style="display: none;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<div class="mobile-backdrop" id="mobile-backdrop" aria-hidden="true"></div>
+<aside class="mobile-panel" id="mobile-panel" aria-label="Mobile menu">
+  <a data-nav-link href="./index.html" data-i18n="nav.home">Home</a>
+  <a data-nav-link href="./models.html" data-i18n="nav.models">AI Models</a>
+  <a data-nav-link href="./about.html" data-i18n="nav.about">About</a>
+</aside>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="orb a" aria-hidden="true"></div>
+    <div class="orb b" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <span class="chip on"><span class="dot"></span><span data-i18n="hero.eyebrow">AI Image Colorization</span></span>
+      <h1>
+        <span data-i18n="hero.title">Bring Historical Images Back to Life with AI</span>
+      </h1>
+      <p class="sub" data-i18n="hero.sub">Transform grayscale photos into vivid color using advanced AI models — Zhang, DeOldify, and FLUX enhancement — in one professional workspace.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#upload" data-i18n="hero.cta.primary">Upload Image</a>
+        <a class="btn btn-ghost" href="./models.html" data-i18n="hero.cta.secondary">Explore AI Models</a>
+      </div>
+      <div class="trust" aria-hidden="true">
+        <span class="chip">Zhang</span>
+        <span class="chip">DeOldify</span>
+        <span class="chip">FLUX</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="how.eyebrow">How It Works</span>
+        <h2 data-i18n="how.title">A four-step AI restoration pipeline</h2>
+        <p data-i18n="how.sub">From a single grayscale image to three fully restored variants — ready to compare and download.</p>
+      </div>
+      <div class="steps" data-connected="true">
+        <div class="step" data-step="1">
+          <div class="step-head">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/><rect x="3" y="15" width="18" height="6" rx="2"/></svg></div>
+            <div class="num">STEP 01</div>
+          </div>
+          <h3 data-i18n="how.s1.title">Upload</h3>
+          <p data-i18n="how.s1.body">Drop or select a grayscale image. JPG or PNG, up to 20MB.</p>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-head">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></div>
+            <div class="num">STEP 02</div>
+          </div>
+          <h3 data-i18n="how.s2.title">AI Analysis</h3>
+          <p data-i18n="how.s2.body">Three models — Zhang, DeOldify, FLUX — colorize your image in parallel.</p>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-head">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/><path d="M7 9h2M7 13h2M15 11h2M15 15h2"/></svg></div>
+            <div class="num">STEP 03</div>
+          </div>
+          <h3 data-i18n="how.s3.title">Compare</h3>
+          <p data-i18n="how.s3.body">Explore results in a professional before/after slider with zoom and fullscreen.</p>
+        </div>
+        <div class="step" data-step="4">
+          <div class="step-head">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><rect x="3" y="17" width="18" height="4" rx="2"/></svg></div>
+            <div class="num">STEP 04</div>
+          </div>
+          <h3 data-i18n="how.s4.title">Download</h3>
+          <p data-i18n="how.s4.body">Save any single result or download the full set as a ZIP archive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="upload">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="upload.eyebrow">Workspace</span>
+        <h2 data-i18n="upload.title">Upload your grayscale image</h2>
+        <p data-i18n="upload.sub">Colorization begins the moment you submit. Processing typically completes in under a minute.</p>
+      </div>
+
+      <div class="workspace">
+        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload image">
+          <svg class="zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <h3 data-i18n="upload.drop.title">Drop image here or click to browse</h3>
+          <small data-i18n="upload.drop.sub">JPG · PNG · WEBP · up to 20MB</small>
+          <input type="file" id="file-input" accept="image/png,image/jpeg,image/webp" hidden />
+        </div>
+
+        <div class="upload-preview hidden" id="upload-preview">
+          <img id="preview-img" alt="Uploaded image preview" />
+          <div class="meta">
+            <div><b data-i18n="upload.file">File</b>: <span id="file-name"></span></div>
+            <div><b data-i18n="upload.size">Size</b>: <span id="file-size"></span></div>
+            <div><b data-i18n="upload.type">Format</b>: <span id="file-type"></span></div>
+            <div class="upload-actions">
+              <button class="btn btn-primary" id="start-btn" data-i18n="upload.start">Start Colorization</button>
+              <button class="btn btn-ghost" id="replace-btn" data-i18n="upload.replace">Choose another</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="error-card hidden" id="upload-error"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pipeline" class="hidden">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="pipeline.title">Processing pipeline</span>
+        <h2 data-i18n="pipeline.title">Processing pipeline</h2>
+      </div>
+      <div class="pipeline pipeline-v2">
+        <div class="row">
+          <span class="status-badge" id="pipe-badge" data-status="queued">
+            <span class="dot"></span><span data-label>queued</span>
+          </span>
+          <span class="progress-num" id="pipe-num">0%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Colorization progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="bar" id="pipe-bar"></div>
+        </div>
+        <ol class="stages stages-timeline" aria-label="Processing stages">
+          <li class="stage" data-stage="prep">
+            <div class="stage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <span class="label">01</span>
+            <span class="name" data-i18n="pipeline.s0">Upload prep</span>
+            <span class="stage-status" aria-hidden="true"></span>
+          </li>
+          <li class="stage-link" aria-hidden="true"><span class="stage-link-inner"></span></li>
+          <li class="stage" data-stage="zhang">
+            <div class="stage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            </div>
+            <span class="label">02</span>
+            <span class="name" data-i18n="pipeline.s1">Zhang</span>
+            <span class="stage-status" aria-hidden="true"></span>
+          </li>
+          <li class="stage-link" aria-hidden="true"><span class="stage-link-inner"></span></li>
+          <li class="stage" data-stage="deoldify">
+            <div class="stage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-1-2 1-4 1s-3-1-3-3 2-3 2-5-2-2-4-2z"/><circle cx="8.5" cy="10.5" r="1"/><circle cx="15" cy="8" r="1"/><circle cx="16.5" cy="13" r="1"/></svg>
+            </div>
+            <span class="label">03</span>
+            <span class="name" data-i18n="pipeline.s2">DeOldify</span>
+            <span class="stage-status" aria-hidden="true"></span>
+          </li>
+          <li class="stage-link" aria-hidden="true"><span class="stage-link-inner"></span></li>
+          <li class="stage" data-stage="flux">
+            <div class="stage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <span class="label">04</span>
+            <span class="name" data-i18n="pipeline.s3">FLUX</span>
+            <span class="stage-status" aria-hidden="true"></span>
+          </li>
+          <li class="stage-link" aria-hidden="true"><span class="stage-link-inner"></span></li>
+          <li class="stage" data-stage="done">
+            <div class="stage-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="label">05</span>
+            <span class="name" data-i18n="pipeline.s4">Completed</span>
+            <span class="stage-status" aria-hidden="true"></span>
+          </li>
+        </ol>
+        <div class="pipeline-note" data-i18n="pipeline.note">Your image is being processed by advanced AI models. This may take a moment.</div>
+        <div class="error-card hidden" id="pipe-error">
+          <b data-i18n="pipeline.error">Colorization failed</b> — <span data-msg></span>
+          <div class="upload-actions"><button class="btn btn-ghost" id="pipe-retry" data-i18n="pipeline.retry">Retry</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare-section" class="hidden">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="compare.eyebrow">Comparison Studio</span>
+        <h2 data-i18n="compare.title">Compare AI colorization results</h2>
+        <p data-i18n="compare.sub">Set left and right images, then drag the divider to inspect every detail.</p>
+      </div>
+
+      <div class="compare-head">
+        <div class="selectors">
+          <label>
+            <span data-i18n="compare.left">Left</span>
+            <select id="cmp-select-left">
+              <option value="original" data-i18n="compare.opt.original">Original (grayscale)</option>
+              <option value="zhang" data-i18n="compare.opt.zhang">Zhang</option>
+              <option value="deoldify" data-i18n="compare.opt.deoldify">DeOldify</option>
+              <option value="flux" data-i18n="compare.opt.flux">FLUX</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="compare.right">Right</span>
+            <select id="cmp-select-right">
+              <option value="original" data-i18n="compare.opt.original">Original (grayscale)</option>
+              <option value="zhang" data-i18n="compare.opt.zhang">Zhang</option>
+              <option value="deoldify" data-i18n="compare.opt.deoldify">DeOldify</option>
+              <option value="flux" selected data-i18n="compare.opt.flux">FLUX</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="viewer" id="compare-viewer">
+        <div class="imgwrap"><img id="cmp-right" alt="Right image" /></div>
+        <div class="imgwrap top" id="cmp-top"><img id="cmp-left" alt="Left image" /></div>
+        <div class="tag left" id="cmp-tag-left">ORIGINAL</div>
+        <div class="tag right" id="cmp-tag-right">FLUX</div>
+        <div class="divider" id="cmp-divider" aria-hidden="true"></div>
+        <button class="handle" id="cmp-handle" role="slider" aria-label="Comparison position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <div class="viewer-toolbar" role="toolbar" aria-label="Viewer tools">
+          <button class="btn-icon" id="cmp-zoom-out" aria-label="Zoom out"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg></button>
+          <button class="btn-icon" id="cmp-zoom-in" aria-label="Zoom in"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></button>
+          <button class="btn-icon" id="cmp-fullscreen" aria-label="Fullscreen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9V3h6M21 9V3h-6M3 15v6h6M21 15v6h-6"/></svg></button>
+          <button class="btn-icon" id="cmp-download" aria-label="Download visible image"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+        </div>
+      </div>
+
+      <div class="viewer-meta">
+        <span><span data-i18n="compare.dim">Dimensions</span>: <span id="cmp-dim">—</span></span>
+        <span><span data-i18n="compare.pos">Divider</span>: <span id="cmp-pos">50%</span></span>
+        <span><span data-i18n="compare.zoom">Zoom</span>: <span id="cmp-zoom">1.00×</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads-section" class="hidden">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="downloads.eyebrow">Export</span>
+        <h2 data-i18n="downloads.title">Download your results</h2>
+        <p data-i18n="downloads.sub">Save each model output individually, or grab all three as a ZIP archive.</p>
+      </div>
+      <div class="downloads-grid" id="dl-grid"></div>
+      <div class="dl-all"><button class="btn btn-primary" id="dl-all" data-i18n="downloads.all">Download All (ZIP)</button></div>
+    </div>
+  </section>
+
+  <section id="history">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="history.eyebrow">My Colorizations</span>
+        <h2 data-i18n="history.title">Recent projects</h2>
+        <p data-i18n="history.sub">Your last colorizations, kept locally in this browser.</p>
+      </div>
+      <div class="history-grid" id="history-grid"></div>
+      <div class="history-empty hidden" id="history-empty">
+        <div class="empty-illus" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="14" width="40" height="30" rx="4"/>
+            <circle cx="20" cy="26" r="3"/>
+            <path d="m8 40 12-10 10 8 8-6 10 8"/>
+            <path d="M46 10v8M42 14h8" opacity=".7"/>
+            <circle cx="52" cy="46" r="6"/>
+            <path d="M52 43v6M49 46h6" opacity=".8"/>
+          </svg>
+        </div>
+        <h3 data-i18n="history.empty.title">Your restored memories will appear here</h3>
+        <p data-i18n="history.empty.body">Completed AI colorizations are saved locally in your browser for quick access.</p>
+        <a class="btn btn-primary" href="#upload" data-i18n="history.empty.cta">Start your first colorization</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+        <h2 data-i18n="faq.title">Frequently asked questions</h2>
+        <p data-i18n="faq.sub">Everything you need to know about GreenHawk AI Colorization.</p>
+      </div>
+      <div class="faq">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q1">What is AI image colorization?</span><span class="chev" aria-hidden="true">▾</span></button>
+          <div class="faq-a" data-i18n="faq.a1"></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q2">Which AI model produces the best result?</span><span class="chev" aria-hidden="true">▾</span></button>
+          <div class="faq-a" data-i18n="faq.a2"></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q3">How long does processing take?</span><span class="chev" aria-hidden="true">▾</span></button>
+          <div class="faq-a" data-i18n="faq.a3"></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q4">Are my uploaded images stored permanently?</span><span class="chev" aria-hidden="true">▾</span></button>
+          <div class="faq-a" data-i18n="faq.a4"></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q5">Can I download all results?</span><span class="chev" aria-hidden="true">▾</span></button>
+          <div class="faq-a" data-i18n="faq.a5"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="brand-block">
+        <a class="brand" href="./index.html">
+          <img src="assets/logo/greenhawk.png" alt="GreenHawk logo" />
+          <span class="brand-name">GreenHawk<span> AI</span></span>
+        </a>
+        <p data-i18n="footer.desc">GreenHawk AI Colorization restores grayscale photographs into vivid color using state-of-the-art computer vision.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.nav">Navigate</h4>
+        <a href="./index.html" data-i18n="nav.home">Home</a>
+        <a href="./models.html" data-i18n="nav.models">AI Models</a>
+        <a href="./about.html" data-i18n="nav.about">About</a>
+      </div>
+      <div>
+        <h4 data-i18n="footer.social.title">CONNECT</h4>
+        <a href="https://github.com/Greenhawk5" rel="noopener noreferrer" class="footer-link">
+          <span class="footer-link-icon">
+            <img src="assets/icons/Dark/github-dark.svg" data-icon-swap="true" data-icon-dark="assets/icons/Dark/github-dark.svg" data-icon-light="assets/icons/Light/github-light.svg" alt="GitHub" width="16" height="16" />
+          </span>
+          <span class="footer-link-text" data-i18n="footer.social.github">GitHub</span>
+        </a>
+        <a href="https://huggingface.co/Greenhawk5" rel="noopener noreferrer" class="footer-link">
+          <span class="footer-link-icon">
+            <img src="assets/icons/Dark/hugging-dark.svg" data-icon-swap="true" data-icon-dark="assets/icons/Dark/hugging-dark.svg" data-icon-light="assets/icons/Light/hugging-face-light.svg" alt="Hugging Face" width="16" height="16" />
+          </span>
+          <span class="footer-link-text" data-i18n="footer.social.huggingface">Hugging Face</span>
+        </a>
+        <a href="https://t.me/greenhawk5" rel="noopener noreferrer" class="footer-link">
+          <span class="footer-link-icon">
+            <img src="assets/icons/Dark/telegram-dark.svg" data-icon-swap="true" data-icon-dark="assets/icons/Dark/telegram-dark.svg" data-icon-light="assets/icons/Light/telegram-light.svg" alt="Telegram" width="16" height="16" />
+          </span>
+          <span class="footer-link-text" data-i18n="footer.social.telegram">Telegram</span>
+        </a>
+        <a href="mailto:Ali.Faniani@gmail.com" class="footer-link">
+          <span class="footer-link-icon">
+            <img src="assets/icons/Dark/gmail-dark.svg" data-icon-swap="true" data-icon-dark="assets/icons/Dark/gmail-dark.svg" data-icon-light="assets/icons/Light/gmail-light.svg" alt="Email" width="16" height="16" />
+          </span>
+          <span class="footer-link-text" data-i18n="footer.social.email">Email</span>
+        </a>
+      </div>
+      <div>
+        <h4 data-i18n="footer.tech">Built with</h4>
+        <div class="tech-badges">
+          <span class="chip">Python</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Computer Vision</span>
+          <span class="chip">Artificial Intelligence</span>
+          <a href="https://huggingface.co/Greenhawk5/activity/likes" target="_blank" rel="noopener noreferrer" class="tech-badge-spaces tech-badge-link">
+            <span class="chip">HuggingFace Spaces</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© GreenHawk AI · All rights reserved.</span>
+      <span data-i18n="footer.fine">GreenHawk AI v1.0.0 | Powered by Zhang · DeOldify · FLUX</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

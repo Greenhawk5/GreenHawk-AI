@@ -1,0 +1,9 @@
+.env
+data/hf_accounts.json
+
+__pycache__/
+
+storage/uploads/*
+storage/outputs/*
+
+*.pyc

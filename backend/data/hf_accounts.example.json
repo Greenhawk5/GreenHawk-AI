@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Account1",
+        "token": "YOUR TOKEN HERE",
+        "used_seconds": 0,
+        "limit_seconds": 90,
+        "last_reset": "2020-01-01",
+        "status": "active"
+    },
+    {
+        "name": "Account2",
+        "token": "YOUR TOKEN HERE",
+        "used_seconds": 0,
+        "limit_seconds": 90,
+        "last_reset": "2020-01-01",
+        "status": "active"
+    }
+]

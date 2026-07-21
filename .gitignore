@@ -1,0 +1,251 @@
+# =====================================================
+# GreenHawk AI
+# Git Ignore Configuration
+# =====================================================
+
+
+# -----------------------------
+# Python
+# -----------------------------
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.so
+.Python
+
+*.egg-info/
+dist/
+build/
+
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# -----------------------------
+# Virtual Environments
+# -----------------------------
+
+venv/
+env/
+.env/
+.venv/
+
+ENV/
+env.bak/
+venv.bak/
+
+
+# -----------------------------
+# Environment Variables
+# Secrets
+# -----------------------------
+
+.env
+.env.*
+!.env.example
+
+
+# API Keys
+*.key
+*.pem
+
+secrets/
+credentials/
+
+
+# -----------------------------
+# FastAPI / Backend
+# -----------------------------
+
+*.log
+
+logs/
+
+uploads/
+
+storage/
+
+temp/
+
+tmp/
+
+
+# Runtime Files
+
+*.pid
+*.sqlite
+*.db
+
+
+# -----------------------------
+# AI Models
+# Large Files
+# -----------------------------
+
+# Model weights
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.h5
+*.bin
+
+# Caffe models
+*.caffemodel
+
+# Large numpy files
+*.npy
+
+
+# AI Cache
+
+models/cache/
+
+huggingface_cache/
+
+.cache/
+
+
+# -----------------------------
+# Experiment Results
+# -----------------------------
+
+experiments/output/
+
+results/
+
+generated_images/
+
+test_outputs/
+
+
+# Large datasets
+
+datasets/
+
+data/raw/
+
+data/processed/
+
+
+# -----------------------------
+# Frontend
+# -----------------------------
+
+node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.pnpm-debug.log*
+
+
+# Build files
+
+dist/
+
+build/
+
+
+# Environment files
+
+frontend/.env
+frontend/.env.*
+
+
+# -----------------------------
+# IDE Settings
+# -----------------------------
+
+.vscode/
+
+.idea/
+
+*.iml
+
+
+# -----------------------------
+# Operating System
+# -----------------------------
+
+# Windows
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+# macOS
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Linux
+
+*~
+
+
+# -----------------------------
+# Temporary Files
+# -----------------------------
+
+*.tmp
+*.temp
+
+*.bak
+
+*.swp
+
+*.swo
+
+
+# -----------------------------
+# Documentation Generated Files
+# -----------------------------
+
+docs/_build/
+
+site/
+
+
+# -----------------------------
+# Jupyter Notebook
+# -----------------------------
+
+.ipynb_checkpoints/
+
+
+# -----------------------------
+# Testing
+# -----------------------------
+
+.coverage
+
+.pytest_cache/
+
+htmlcov/
+
+
+# -----------------------------
+# Deployment
+# -----------------------------
+
+docker-compose.override.yml
+
+*.pid
+
+
+# -----------------------------
+# Personal Files
+# -----------------------------
+
+notes/
+
+private/
+
+screenshots/raw/
