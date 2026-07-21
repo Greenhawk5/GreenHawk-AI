@@ -560,15 +560,18 @@ If you use this project in academic work, please cite:
 
 # License
 
-This project is released under the MIT License.
+GreenHawk AI is released under the **MIT License**.
 
-See:
+This allows users to:
 
-```
-LICENSE
-```
+- Use the project commercially
+- Modify the source code
+- Distribute copies
+- Use the project for research and educational purposes
 
-for more information.
+For full license details:
+
+📄 [MIT License](LICENSE)
 
 ---
 
