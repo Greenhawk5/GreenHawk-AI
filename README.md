@@ -2,7 +2,7 @@
 
 <p align="center">
 
-<img src="https://raw.githubusercontent.com/Greenhawk5/GreenHawk-AI/main/assets/logo/logo.png" width="180" />
+<img src="frontend/public/assets/logo/greenhawk.png" width="180" />
 
 </p>
 
