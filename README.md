@@ -1,29 +1,25 @@
 # GreenHawk AI
 
 <p align="center">
-
-<img src="frontend/public/assets/logo/greenhawk.png" width="180" />
-
+  <img src="frontend/public/assets/logo/banner.png" alt="GreenHawk AI Banner" width="100%" />
 </p>
 
-<h3 align="center">
-AI-Powered Black & White Image Colorization Platform
-</h3>
+<h1 align="center">GreenHawk AI</h1>
 
 <p align="center">
-
-Transform grayscale photographs into realistic color images using modern Computer Vision and Deep Learning models.
-
+  <b>AI-Powered Black & White Image Colorization Platform</b>
 </p>
 
 <p align="center">
+  Transform grayscale photographs into realistic color images using modern Computer Vision and Deep Learning models.
+</p>
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688.svg)
-![Computer Vision](https://img.shields.io/badge/Computer%20Vision-AI-purple.svg)
-![Deep Learning](https://img.shields.io/badge/Deep%20Learning-PyTorch-orange.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" />
+  <img src="https://img.shields.io/badge/FastAPI-Backend-green.svg" />
+  <img src="https://img.shields.io/badge/Computer%20Vision-AI-purple.svg" />
+  <img src="https://img.shields.io/badge/Deep%20Learning-PyTorch-orange.svg" />
+  <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" />
 </p>
 
 ---
@@ -597,4 +593,3 @@ https://github.com/Greenhawk5/GreenHawk-AI
 Built with ❤️ using Artificial Intelligence and Computer Vision
 
 </p>
-```
