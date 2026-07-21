@@ -50,4 +50,3 @@ After receiving a report:
 Please allow reasonable time for fixing security problems before public disclosure.
 
 Thank you for helping keep GreenHawk AI secure.
-```

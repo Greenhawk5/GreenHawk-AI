@@ -418,29 +418,27 @@ STORAGE_PATH=storage/
 
 POST /colorize
 
-
-Input:
+**Input:**
 
 - Image file
 - Selected model
 
-
-Supported models:
+**Supported models:**
 
 - Zhang
 - DeOldify
 - FLUX
 
+**Response:**
 
-Response:
-
+```json
 {
- "status": "success",
- "results": {
+  "status": "success",
+  "results": {
     "zhang": "...",
     "deoldify": "...",
     "flux": "..."
- }
+  }
 }
 ```
 
@@ -448,77 +446,55 @@ Response:
 
 # Folder Structure
 
-```
+```text
 GreenHawk-AI/
 
-│
 ├── frontend/
-│
 │   ├── assets/
 │   ├── css/
 │   ├── js/
 │   └── index.html
 │
-│
 ├── backend/
-│
 │   ├── main.py
 │   ├── config.py
-│   │
 │   ├── models/
 │   │   ├── zhang.py
 │   │   ├── deoldify.py
 │   │   └── flux.py
-│   │
 │   ├── services/
 │   │   ├── colorization_service.py
 │   │   ├── storage_manager.py
 │   │   ├── quota_manager.py
 │   │   └── url_service.py
-│   │
 │   ├── jobs/
 │   │   └── job_manager.py
-│
+│   ├── data/
+│   └── storage/
+│       ├── outputs/
+│       └── uploads/
 │
 ├── docs/
-│
 ├── LICENSE
 ├── README.md
-└── .gitignore
-
+├── CITATION.cff
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+└── SECURITY.md
 ```
 
 ---
 
 # Example Workflow
 
-```
-1. User uploads grayscale image
-
-            ↓
-
-2. Frontend sends request
-
-            ↓
-
-3. FastAPI receives image
-
-            ↓
-
-4. Backend prepares image
-
-            ↓
-
-5. AI models process image
-
-            ↓
-
-6. Results are stored
-
-            ↓
-
-7. User compares and downloads outputs
-
+```mermaid
+flowchart TD
+    A["User uploads grayscale image"] --> B["Frontend sends request"]
+    B --> C["FastAPI receives image"]
+    C --> D["Backend processes image"]
+    D --> E["AI models generate results"]
+    E --> F["Results are stored"]
+    F --> G["User compares and downloads outputs"]
 ```
 
 ---

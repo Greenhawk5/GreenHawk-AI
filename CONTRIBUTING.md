@@ -140,4 +140,3 @@ A Pull Request should include:
 For questions or discussions, open an Issue.
 
 Thank you for helping improve GreenHawk AI.
-```

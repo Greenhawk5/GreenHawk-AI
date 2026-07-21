@@ -40,5 +40,3 @@ and take appropriate actions when necessary.
 # Contact
 
 For concerns, contact the repository maintainers.
-
-```
